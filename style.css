@@ -1,15 +1,4 @@
-
 @import url('https://fonts.googleapis.com/css2?family=Pixelify+Sans:wght@400..700&display=swap');
-
-/* Fonte Pixelify Sans*/
-/* https://fonts.googleapis.com/css2?family=Pixelify+Sans:wght@400..700&display=swap */
-
-#vencer {
-        position: absolute;
-        z-index: 4;
-        background-color: white;
-        font-family: "Pixelify Sans", sans-serif;
-}
 
 #ball{
         background-color: green;
@@ -24,5 +13,23 @@
         transition: 0s;
         background-color: green;
         padding: 300 px;
+}
 
+#message {
+    position: absolute;
+    z-index: 40;
+    color: #49F52F;
+    font-size: 60px;
+   
+    background-color: #5E5E5E80;
+    
+    width: 100vw;
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+*{
+    font-family: "Pixelify Sans", sans-serif;
 }
