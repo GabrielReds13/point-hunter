@@ -1,5 +1,20 @@
 @import url('https://fonts.googleapis.com/css2?family=Pixelify+Sans:wght@400..700&display=swap');
 
+#ball{
+        background-color: green;
+}
+
+#ball{
+        transition: 4s;
+        background-color: red;
+}
+
+#ball:active{
+        transition: 0s;
+        background-color: green;
+        padding: 300 px;
+}
+
 #message {
     position: absolute;
     z-index: 40;
