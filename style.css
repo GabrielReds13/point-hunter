@@ -1,3 +1,6 @@
-.bg-black{
-    z-index: 1;
+#vencer {
+        position: absolute;
+        z-index: 4;
+        background-color: white;
+
 }
