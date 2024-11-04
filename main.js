@@ -1,4 +1,17 @@
+// dom element
+const dom = {
+    ball: document.getElementById("ball"),
+    currentScore: document.getElementById("currentScore"),
+    bestScore: document.getElementById("bestScore"),
+}
+
+const player = {
+    bestScore: 0,
+
+}
 
 
-const ball = document.getElementById("ball");
-
+// function
+function timer() {
+    
+}
