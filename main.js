@@ -6,6 +6,8 @@ const audios = {
     newRecord: new Audio("./assets/sounds/new-record-sound.mp3"),
     countdown: new Audio("./assets/sounds/countdown-sound.mp3"),
     ballClick: new Audio("./assets/sounds/ball-click.mp3"),
+    ratinho: new Audio("./assets/sounds/ratinho-song.mp3"),
+    laugh: new Audio("./assets/sounds/laugh-song.mp3"),
 }
 
 // code
@@ -77,9 +79,16 @@ const game = {
         },
         dScore: {
             stage1: 750,
-            stage2: 2000,
-            stage3: 6000,
-            stage4: 10000,
+            stage2: 4500,
+            stage3: 8000,
+            stage4: 15000,
+        },
+        speed () {
+            if(this.setCountdown() === this.dificulty.v2) return 800;
+            else if(this.setCountdown() === this.dificulty.v3) return 700;
+            else if(this.setCountdown() === this.dificulty.v4) return 600;
+            else if(this.setCountdown() === this.dificulty.v5) return 400;
+            else return 1000;
         },
         setCountdown() {
             if(player.currentScore >= this.dScore.stage1 && player.currentScore < this.dScore.stage2) return this.dificulty.v2;
@@ -93,9 +102,11 @@ const game = {
         function phrases() {
             if(player.currentScore < player.bestScore || player.currentScore === 0) {
                 audios.lose.play();
+                audios.laugh.play();
                 return "GAME OVER";
             }
             else {
+                audios.ratinho.play();
                 audios.newRecord.play();
                 return "NEW SCORE";
             }
@@ -125,7 +136,7 @@ let cronometer = {
                     this.countdown -= 1;
                     this.updateDisplay();
                 }
-            }, 1000);
+            }, game.roundTimer.speed());
         }
     },
     
