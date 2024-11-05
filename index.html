@@ -1,9 +1,9 @@
 <!DOCTYPE html>
-<html lang="pt-ber">
+<html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Point Hunter</title>
 
     <!-- styles -->
     <script src="https://cdn.tailwindcss.com"></script>
@@ -12,10 +12,16 @@
 
 <body class="bg-black text-white">
     <!-- message -->
-    <!-- <h1 id="message">WINNER</h1> -->
+    <div id="messageContainer">
+        <div class="dialog">
+            <h1 id="message">GOOD GAME </h1>
+            <p class="subtext cursor-pointer" onclick="startGame('tryAgain')">Try again here</p>
+        </div>
+        </h1>
+    </div>
   
     <!-- content -->
-    <div class="flex flex-col justify-center items-center w-screen h-screen ">
+    <div class="flex flex-col justify-center items-center w-screen h-screen">
         <!-- head -->
         <div class="flex flex-row justify-between w-full max-w-[400px] mb-6">
             <!-- current score -->
@@ -33,18 +39,18 @@
         </div>
         
         <!-- game -->
-        <div class="flex w-full max-w-[400px] h-full max-h-[400px] border-2 border-white">
+        <div class="flex w-[400px] h-[400px] border-2 border-white">
             <div id="ball" class="relative left-[46%] top-[46%] object-none object-center w-10 h-10 bg-red-600 rounded-full cursor-pointer" onclick="ballClick()"></div>
         </div>
         
         <!-- menu -->
         <div class="flex flex-col justify-between w-full max-w-[400px] mt-6">
-            <!-- <button class="w-full bg-white text-black font-semibold h-[40px]">Text</button> -->
+            <button id="playButton" class="w-full bg-white text-black font-semibold h-[40px]" onclick="startGame('play')">Start game</button>
 
             <!-- timer -->
-            <p class="text-md leading-3 text-center">
+            <p id="timerSection" class="text-md leading-3 text-center h-[40px]">
                 <span>Timer</span> <br>
-                <span id="countdown" class="text-xl font-semibold"></span>
+                <span id="countdown" class="text-xl font-semibold">5</span>
             </p>
         </div>
     </div>
